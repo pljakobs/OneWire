@@ -148,7 +148,7 @@ sample code bearing this copyright.
 #include "OneWire.h"
 #include "util/OneWire_direct_gpio.h"
 
-#ifdef ARDUINO_ARCH_ESP32
+#ifdef SOC_ESP32
 // due to the dual core esp32, a critical section works better than disabling interrupts
 #  define noInterrupts() {portMUX_TYPE mux = portMUX_INITIALIZER_UNLOCKED;portENTER_CRITICAL(&mux)
 #  define interrupts() portEXIT_CRITICAL(&mux);}
