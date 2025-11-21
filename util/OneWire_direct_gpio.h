@@ -155,7 +155,7 @@ bool directRead(IO_REG_TYPE mask)
 #define DIRECT_WRITE_LOW(base, mask)    (mask > 0x8000) ? GP16O &= ~1 : (GPOC = (mask))
 #define DIRECT_WRITE_HIGH(base, mask)   (mask > 0x8000) ? GP16O |= 1 : (GPOS = (mask))
 
-#elif defined(ARDUINO_ARCH_ESP32)
+#elif defined(SOC_ESP32)
 #include <driver/rtc_io.h>
 #include <soc/gpio_struct.h>
 #define PIN_TO_BASEREG(pin)             (0)
